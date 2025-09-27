@@ -4,4 +4,5 @@
 
 - the table `Products` can show in which distribution center the products are located. I think know this is important to optimize logistics processes
 
--Table òrders` has "user_id" column that can be joined with ùsers`table. With that information we can know more about the status and location of the orders shipped and demographics information of purchasers
+- Table òrders` has "user_id" column that can be joined with ùsers`table. With that information we can know more about the status and location of the orders shipped and demographics information of purchasers
+

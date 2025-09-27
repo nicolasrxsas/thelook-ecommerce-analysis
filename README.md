@@ -8,7 +8,7 @@ thelook-ecommerce-analysis/
 ├─ sql/
 │   └─ Exploration.sql
 ├─ docs/
-│   └─ notas_exploracion.md
+│   └─ exploration_notes.md
 ```
 ## Initial Goal:
 **Learn to use BigQuery with an e-commerce dataset to generate business insights.”**

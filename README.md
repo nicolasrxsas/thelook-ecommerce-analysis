@@ -1,25 +1,25 @@
 # thelook-ecommerce-analysis
-Proyecto de análisis de datos de ecommerce usando BigQuery y Power BI. Dataset: thelook_ecommerce (public dataset)
+E-commerce data analysis project using BigQuery and Power BI. Dataset: thelook_ecommerce (public dataset)
 
 
 thelook-ecommerce-analysis/
 ``` MARKDOWN
 ├─ README.md
 ├─ sql/
-│   └─ exploracion.sql
+│   └─ Exploration.sql
 ├─ docs/
 │   └─ notas_exploracion.md
 ```
-## Objetivo inicial:
-**Aprender a usar BigQuery con un dataset de ecommerce para generar insights de negocio.”**
+## Initial Goal:
+**Learn to use BigQuery with an e-commerce dataset to generate business insights.”**
 
 *  *Dataset: bigquery-public-data.thelook_ecommerce.*
-* *Estado del proyecto: “En progreso – actualmente en etapa de exploración”.*
-## Avances del proyecto
-- [x] Explorar dataset en BigQuery
-- [ ] Definir KPIs clave
-- [ ] Construir queries para KPIs
-- [ ] Crear tablas derivadas en BigQuery
-- [ ] Conectar con Power BI
-- [ ] Diseñar dashboards
-- [ ] Redactar conclusiones de negocio
+* *Project Status: "In Progress – currently in the exploration stage”.*
+## Project Progress
+- [x] Explore dataset in BigQuery
+- [ ] Define key KPIs
+- [ ] Build queries for KPIs
+- [ ] Create derived tables in BigQuery
+- [ ] Connect with Power BI
+- [ ] Design dashboards
+- [ ] Draft business conclusions

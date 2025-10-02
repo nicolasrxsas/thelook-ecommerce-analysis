@@ -5,8 +5,8 @@ This project uses the public **`thelook_ecommerce`** dataset from Google BigQuer
 The main objective is to move beyond descriptive metrics and answer analytical questions that provide **strategic value** for decision-making.
 ## Project Progress
 - [x] Explore dataset in BigQuery
-- [ ] Define key KPIs
-- [ ] Build queries for KPIs
+- [x] Define key KPIs
+- [ ] Build queries for KPIs ***(In Progress)***
 - [ ] Create derived tables in BigQuery
 - [ ] Connect with Power BI
 - [ ] Design dashboards

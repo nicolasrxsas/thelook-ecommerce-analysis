@@ -15,7 +15,8 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ``` MARKDOWN
 ├─ README.md
 ├─ sql/
-│   └─ Exploration.sql
+   └─ Exploration.sql
+   └─ customers_behavior.sql
 ├─ docs/
 │   └─ exploration_notes.md
 ```

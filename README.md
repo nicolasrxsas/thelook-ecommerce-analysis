@@ -24,20 +24,26 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 
 ## 🎯 Analysis Objectives
 
-This project seeks to answer three key questions:
+### 🧭 1. Business Overview / Key Metrics
+Objective: Understand the overall health of the business.
+Examples:
+* Total revenue (excluding returns)
+* Total profit
+* Revenue growth per year or quarter
+* Orders completed vs. canceled
+📄 Suggested file: 01_overview_metrics.sql
 
-### Customer Dynamics and Cohorts
-* How do customers behave over time after their first purchase?
-* How effective is customer retention?
+### 📊 2. Sales & Profitability Analysis
+* Revenue by category
+* Profit margin by category
+* Top 20 products by revenue or profit
 
-### Sales and Margin Drivers (Core Question)
-* What product categories generate the most revenue?
-* What categories generate the highest profitability (margins)?
-* Does the business rely on sales volume or high margins?
+📄 SQL File: [Click here](sales_and_margin_drivers.sql) 
 
-### Customer Value Patterns
-* Is there a "high-value" customer profile, and how does it differ from low-value customers?
-* How do the average ticket size and purchase frequency vary among customers?
+### 🌍 3. Customer & Market Insights
+* These queries focus on understanding user behavior, retention, and purchasing patterns through cohort analysis and retention metrics. 
+  
+📄 SQL File: [Click here](customer_dynamics_and_cohorts.sql) 
 
 ---
 

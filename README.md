@@ -38,7 +38,7 @@ Examples:
 * Profit margin by category
 * Top 20 products by revenue or profit
 
-📄 SQL File: [Click here](sales_and_margin_drivers.sql) 
+📄 SQL File: [02_sales_profit_analysis.sql](02_sales_profit_analysis.sql) 
 
 ### 🌍 3. Customer & Market Insights
 * These queries focus on understanding user behavior, retention, and purchasing patterns through cohort analysis and retention metrics. 

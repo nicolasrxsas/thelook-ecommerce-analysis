@@ -6,8 +6,8 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ## Project Progress
 - [x] Explore dataset in BigQuery
 - [x] Define key KPIs
-- [ ] Build queries for KPIs ***(In Progress)***
-- [ ] Create derived tables in BigQuery
+- [X] Build queries for KPIs 
+- [ ] Create derived tables in BigQuery ***(In Progress)***
 - [ ] Connect with Power BI
 - [ ] Design dashboards
 - [ ] Draft business conclusions

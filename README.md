@@ -25,12 +25,15 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ## 🎯 Analysis Objectives
 
 ### 🧭 1. Business Overview / Key Metrics
-Objective: Understand the overall health of the business.
-Examples:
-* Total revenue (excluding returns)
-* Total profit
-* Revenue growth per year or quarter
-* Orders completed vs. canceled
+This section provides a high-level overview of the business performance and customer base.
+**Queries included:**
+- Total revenue, orders, and customers
+- Average order value (AOV)
+- Monthly revenue trend
+- New customers per month
+- Revenue by country
+- Top 10 customers by revenue
+
 📄 Suggested file: 01_overview_metrics.sql
 
 ### 📊 2. Sales & Profitability Analysis
@@ -43,7 +46,7 @@ Examples:
 ### 🌍 3. Customer & Market Insights
 * These queries focus on understanding user behavior, retention, and purchasing patterns through cohort analysis and retention metrics. 
   
-📄 SQL File: [Click here](customer_dynamics_and_cohorts.sql) 
+📄 SQL File: [03_customer_dynamics_and_cohorts.sql](sql/03_customer_dynamics_and_cohorts.sql) 
 
 ---
 

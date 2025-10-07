@@ -34,7 +34,7 @@ This section provides a high-level overview of the business performance and cust
 - Revenue by country
 - Top 10 customers by revenue
 
-📄 Suggested file: 01_overview_metrics.sql
+📄 SQL File:[01_business_overview_metrics.sql](sql/01_business_overview_metrics.sql)
 
 ### 📊 2. Sales & Profitability Analysis
 * Revenue by category

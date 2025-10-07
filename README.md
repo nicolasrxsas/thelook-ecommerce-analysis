@@ -15,9 +15,13 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ``` MARKDOWN
 ├─ README.md
 ├─ sql/
-   └─ Exploration.sql
-   └─customer_dynamics_and_cohorts.sql
-   └─ sales_and_margin_drivers.sql
+   └─01_business_overview_metrics.sql
+   └─02_sales_and_margin_drivers.sql
+   └─03_customer_dynamics_and_cohorts.sql
+   └─Exploration.sql
+   
+   
+   
 ├─ docs/
 │   └─ exploration_notes.md
 ```

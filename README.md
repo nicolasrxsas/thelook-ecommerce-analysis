@@ -16,7 +16,7 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ├─ README.md
 ├─ sql/
    └─ Exploration.sql
-   └─ customers_behavior.sql
+   └─customer_dynamics_and_cohorts.sql
    └─ sales_and_margin_drivers.sql
 ├─ docs/
 │   └─ exploration_notes.md

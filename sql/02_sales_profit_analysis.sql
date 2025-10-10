@@ -24,7 +24,7 @@ SELECT
   p.category,
   ROUND(SUM(oi.sale_price - p.cost), 2) AS total_profit,
   ROUND(SUM(oi.sale_price), 2) AS total_revenue,
-  ROUND(SUM(oi.sale_price - p.cost) / SUM(oi.sale_price) * 100, 2) AS profit_margin_percent,
+  ROUND(SUM(oi.sale_price - p.cost) / SUM(oi.sale_price), 4) AS profit_margin_percent,
   COUNT(DISTINCT oi.id) AS total_items_sold
 FROM 
   `bigquery-public-data.thelook_ecommerce.products` p
@@ -93,6 +93,7 @@ WHERE oi.returned_at IS NULL
 GROUP BY product_id, product_name, category
 ORDER BY revenue DESC
 LIMIT 20;
+
 
 
 

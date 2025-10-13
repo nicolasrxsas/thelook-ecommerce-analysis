@@ -1,26 +1,4 @@
 
-/* RFM per User */
-SELECT
-  oi.user_id,
-  CONCAT(u.first_name," ", u.last_name) AS customer_name,
-  u.age,
-  u.gender,
-  u.country,
-  DATE_DIFF(CURRENT_DATE(), MAX(DATE(o.created_at)), DAY) AS recency_days,
-  COUNT(DISTINCT o.order_id) AS frequency,
-  SUM(oi.sale_price) AS monetary
-FROM `bigquery-public-data.thelook_ecommerce.order_items` oi
-JOIN `bigquery-public-data.thelook_ecommerce.orders` o USING(order_id)
-JOIN `bigquery-public-data.thelook_ecommerce.users` u ON u.id = o.user_id
-WHERE oi.returned_at IS NULL
-GROUP BY customer_name, 
-oi.user_id,
-u.age,
-  u.gender,
-  u.country
-ORDER BY monetary DESC
-LIMIT 1000;
-
 /*  Total Revenue (excluding returns) */
 SELECT 
   ROUND(SUM(oi.sale_price), 2) AS total_revenue
@@ -106,3 +84,4 @@ WHERE oi.status = 'Complete'
 GROUP BY o.user_id, customer_name
 ORDER BY total_spent DESC
 LIMIT 10;
+

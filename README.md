@@ -15,6 +15,8 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ``` MARKDOWN
 ├─ docs/
    └─ exploration_notes.md
+├─ powerbi/
+   └─ Data_Model_Overview.md
 ├─ sql/
    └─01_business_overview_metrics.sql
    └─02_sales_and_margin_drivers.sql

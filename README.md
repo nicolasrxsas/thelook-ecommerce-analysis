@@ -19,6 +19,7 @@ The main objective is to move beyond descriptive metrics and answer analytical q
    └─01_business_overview_metrics.sql
    └─02_sales_and_margin_drivers.sql
    └─03_customer_dynamics_and_cohorts.sql
+   └─04_sales_base.sql
    └─Exploration.sql
 ├─ README.md
 ```

@@ -49,3 +49,27 @@ CALCULATE(
         'Sales_Base'[user_id]
     )
 )
+```
+This keeps the model clean and scalable, preventing circular dependencies or cardinality conflicts.
+
+---
+
+## 🧭 Benefits of the Design
+
+It allows for analyzing the business from three main perspectives:
+* **Business Overview:** General view of commercial performance (revenue, orders, customers, average ticket).
+* **Sales & Profitability:** Profitability by category, margins, and top products.
+* **Customer & Market Insights:** Purchase behavior, retention, and cohorts.
+
+The design also:
+* Optimizes Power BI performance by minimizing complex direct relationships.
+* Facilitates model understanding for analysts, recruiters, or technical teams.
+
+---
+
+## 📘 Conclusion
+
+This model combines a modular and analytical architecture, based on e-commerce transactional data, to obtain a comprehensive view of the business.
+
+The strategic use of many-to-many and virtual relationships in DAX reflects an advanced approach to data modeling and performance optimization for dynamic visualizations in Power BI.
+

@@ -7,9 +7,9 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 - [x] Explore dataset in BigQuery
 - [x] Define key KPIs
 - [X] Build queries for KPIs 
-- [ ] Create derived tables in BigQuery ***(In Progress)***
-- [ ] Connect with Power BI
-- [ ] Design dashboards
+- [x] Create derived tables in BigQuery 
+- [x] Connect with Power BI
+- [ ] Design dashboards ***(In Progress)***
 - [ ] Draft business conclusions
 ## How to Navigate
 ``` MARKDOWN

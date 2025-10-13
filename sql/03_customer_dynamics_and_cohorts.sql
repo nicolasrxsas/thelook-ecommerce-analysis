@@ -92,12 +92,24 @@ ORDER BY c.cohort_month, c.purchase_month;
 
 /* It shows the average number of orders per customer, grouped by month of first purchase. /*/
 
+WITH user_first_purchase AS (
+    SELECT
+        user_id,
+        DATE_TRUNC(MIN(created_at), MONTH) AS cohort_month
+    FROM `bigquery-public-data.thelook_ecommerce.orders`
+    WHERE status = 'Complete'
+    GROUP BY user_id
+)
 SELECT
-  DATE_TRUNC(MIN(o.created_at), MONTH) AS cohort_month,
-  COUNT(o.order_id) / COUNT(DISTINCT o.user_id) AS avg_orders_per_customer
+    ufp.cohort_month,
+    COUNT(o.order_id) / COUNT(DISTINCT o.user_id) AS avg_orders_per_customer,
+    o.user_id
 FROM `bigquery-public-data.thelook_ecommerce.orders` o
+JOIN user_first_purchase ufp
+    ON o.user_id = ufp.user_id
 WHERE o.status = 'Complete'
-GROUP BY cohort_month
-ORDER BY cohort_month;
+GROUP BY ufp.cohort_month, 
+        o.user_id
+ORDER BY ufp.cohort_month;
 
 

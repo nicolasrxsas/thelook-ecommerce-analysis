@@ -48,10 +48,11 @@ ORDER BY
 WITH category_summary AS (
   SELECT 
     p.category,
+    p.id,
     SUM(oi.sale_price - p.cost) AS total_profit,
     SUM(oi.sale_price) AS total_revenue,
     ROUND(SUM(oi.sale_price - p.cost) / SUM(oi.sale_price) * 100, 2) AS profit_margin_percent,
-    COUNT(oi.id) AS total_items_sold
+    COUNT(oi.id) AS total_items_sold,
   FROM 
     `bigquery-public-data.thelook_ecommerce.products` p
   JOIN 
@@ -60,10 +61,13 @@ WITH category_summary AS (
   WHERE 
     oi.status = 'Complete'
   GROUP BY 
-    p.category
+    p.category,
+    p.id
+    
 )
 SELECT
   category,
+  id,
   total_items_sold,
   total_revenue,
   total_profit,
@@ -93,6 +97,7 @@ WHERE oi.returned_at IS NULL
 GROUP BY product_id, product_name, category
 ORDER BY revenue DESC
 LIMIT 20;
+
 
 
 

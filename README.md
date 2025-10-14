@@ -16,6 +16,7 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ├─ docs/
    └─ exploration_notes.md
 ├─ powerbi/
+   └─ DAX_Measures.md
    └─ Data_Model_Overview.md
 ├─ sql/
    └─01_business_overview_metrics.sql

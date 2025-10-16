@@ -3,6 +3,8 @@
 The data model was designed with a **semi-structured star schema** approach, where the **Sales_Base** table acts as the **central fact table**, connecting various analytical views derived from BigQuery.
 This design balances the simplicity of navigation in Power BI with the flexibility required for complex DAX calculations.
 
+![Click here to see the Data Model Image](Data_model_capture.png)
+
 ---
 
 ## ⚙️ General Model Structure
@@ -72,4 +74,5 @@ The design also:
 This model combines a modular and analytical architecture, based on e-commerce transactional data, to obtain a comprehensive view of the business.
 
 The strategic use of many-to-many and virtual relationships in DAX reflects an advanced approach to data modeling and performance optimization for dynamic visualizations in Power BI.
+
 

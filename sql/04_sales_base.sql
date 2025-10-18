@@ -1,6 +1,6 @@
 -- This is the query used to create a base table that allows for making DAX measures in Power BI in a faster way.
 
-CREATE OR REPLACE TABLE your_dataset.sales_base AS
+CREATE OR REPLACE TABLE `analisis-retail.thelook_analysis_project2.Sales_Base` AS
 SELECT
   -- Order
   o.order_id,
@@ -41,3 +41,4 @@ JOIN `bigquery-public-data.thelook_ecommerce.products` p
 LEFT JOIN `bigquery-public-data.thelook_ecommerce.users` u
   ON o.user_id = u.id
 WHERE o.status = 'Complete';
+

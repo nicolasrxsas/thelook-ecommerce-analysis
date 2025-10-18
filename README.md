@@ -37,7 +37,7 @@ This section provides a high-level overview of the business performance and cust
 - Monthly revenue trend
 - New customers per month
 - Revenue by country
-- Top 10 customers by revenue
+- Revenue by category
 
 📄 SQL File:[01_business_overview_metrics.sql](sql/01_business_overview_metrics.sql)
 

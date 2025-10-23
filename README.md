@@ -27,19 +27,37 @@ The main objective is to move beyond descriptive metrics and answer analytical q
 ├─ README.md
 ```
 
-## 🎯 Analysis Objectives
-
-### 🧭 1. Business Overview / Key Metrics
+# 🎯 Analysis Objectives
+## 🧭 1. Business Overview / Key Metrics
 This section provides a high-level overview of the business performance and customer base.
-**Queries included:**
-- Total revenue, orders, and customers
-- Average order value (AOV)
-- Monthly revenue trend
-- New customers per month
-- Revenue by country
-- Revenue by category
+### 🧾 Data Source
+Data was extracted from the **Sales Base** and **01_business_overview_metrics** tables, which consolidates transactional sales data including customer information, product details, and invoice records.
 
-📄 SQL File:[01_business_overview_metrics.sql](sql/01_business_overview_metrics.sql)
+📄 **SQL Files:**
+   - [01_business_overview_metrics.sql](sql/01_business_overview_metrics.sql)
+   - [04__sales_base.sql](sql/04_sales_base.sql)
+
+### ⚙️ DAX Measures Used
+```DAX
+-- Total Sales
+Total Sales = SUM('Sales Base'[Total])
+
+-- Total Quantity Sold
+Total Quantity = SUM('Sales Base'[Quantity])
+
+-- Average Sales per Invoice
+Average Sales per Invoice = 
+    DIVIDE([Total Sales], DISTINCTCOUNT('Sales Base'[Invoice ID]))
+
+-- Rank by Sales
+Customer Rank = 
+    RANKX(
+        ALL('Sales Base'[Customer Name]),
+        [Total Sales],
+        ,
+        DESC
+    )
+```
 ## 📊 2. Sales & Profitability Analysis
 
 ### 🎯 Objective

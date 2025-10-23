@@ -40,14 +40,34 @@ This section provides a high-level overview of the business performance and cust
 - Revenue by category
 
 📄 SQL File:[01_business_overview_metrics.sql](sql/01_business_overview_metrics.sql)
+## 📊 2. Sales & Profitability Analysis
 
-### 📊 2. Sales & Profitability Analysis
-* Revenue by category
-* Profit margin by category
-* Top 20 products by revenue or profit
+### 🎯 Objective
+This section explores the core profitability drivers of the business — identifying **which categories and products generate the most revenue and profit**, and whether the company relies on **high sales volume** or **high margins** for growth.
 
-📄 SQL File: [02_sales_profit_analysis.sql](sql/02_sales_profit_analysis.sql) 
+---
 
+### 🧱 Data Sources
+- **Sales_Base:** Main sales table containing key transaction data (`order_id`, `product_id`, `category`, `sale_price`, `cost`, `order_date`, `customer_id`).
+- **margin_vs_volume:** Aggregated data showing profitability and sales volume per category.
+- **top_20_products:** Filtered dataset containing the 20 products with the highest revenue or profit.
+- 📄 SQL File: [02_sales_profit_analysis.sql](sql/02_sales_profit_analysis.sql) 
+
+---
+
+### ⚙️ DAX Measures Used
+
+#### Core Metrics
+```DAX
+Total Revenue = SUM(Sales_Base[sale_price])
+
+Total Cost = SUM(Sales_Base[cost])
+
+Total Profit = [Total Revenue] - [Total Cost]
+
+Profit Margin % =
+DIVIDE([Total Profit], [Total Revenue], 0)
+```
 ### 🌍 3. Customer & Market Insights
 * These queries focus on understanding user behavior, retention, and purchasing patterns through cohort analysis and retention metrics. 
   

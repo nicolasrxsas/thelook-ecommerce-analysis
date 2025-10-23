@@ -59,8 +59,6 @@ Customer Rank =
     )
 ```
 ## 📊 2. Sales & Profitability Analysis
-
-### 🎯 Objective
 This section explores the core profitability drivers of the business — identifying **which categories and products generate the most revenue and profit**, and whether the company relies on **high sales volume** or **high margins** for growth.
 
 ---

@@ -122,7 +122,11 @@ It delivers not only dashboards but **strategic, data-backed narratives** that g
 
 ## 📁 Repository Structure
 ```pgsql
-   ├─ docs/
+├─ Image/
+│   ├─ customer_insights.png
+│   ├─ key_metrics.png
+│   ├─ products_profitability.png
+├─ docs/
 │   └─ exploration_notes.md
 ├─ powerbi/
 │   ├─ DAX_Measures.md

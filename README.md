@@ -1,112 +1,136 @@
-# Project 2 – E-commerce Analysis with BigQuery and Power BI
+# 🛍️ Project 2 – E-commerce Analysis with BigQuery and Power BI
 
-This project uses the public **`thelook_ecommerce`** dataset from Google BigQuery to perform a business analysis focused on discovering patterns in sales, customers, and products.
-
-The main objective is to move beyond descriptive metrics and answer analytical questions that provide **strategic value** for decision-making.
-## Project Progress
-- [x] Explore dataset in BigQuery
-- [x] Define key KPIs
-- [X] Build queries for KPIs 
-- [x] Create derived tables in BigQuery 
-- [x] Connect with Power BI
-- [ ] Design dashboards ***(In Progress)***
-- [ ] Draft business conclusions
-## How to Navigate
-``` MARKDOWN
-├─ docs/
-   └─ exploration_notes.md
-├─ powerbi/
-   └─ DAX_Measures.md
-   └─ Data_Model_Overview.md
-├─ sql/
-   └─01_business_overview_metrics.sql
-   └─02_sales_and_margin_drivers.sql
-   └─03_customer_dynamics_and_cohorts.sql
-   └─04_sales_base.sql
-   └─Exploration.sql
-├─ README.md
-```
-
-# 🎯 Analysis Objectives
-## 🧭 1. Business Overview / Key Metrics
-This section provides a high-level overview of the business performance and customer base.
-### 🧾 Data Source
-Data was extracted from the **Sales Base** and **01_business_overview_metrics** tables, which consolidates transactional sales data including customer information, product details, and invoice records.
-
-📄 **SQL Files:**
-   - [01_business_overview_metrics.sql](sql/01_business_overview_metrics.sql)
-   - [04__sales_base.sql](sql/04_sales_base.sql)
-
-### ⚙️ DAX Measures Used
-```DAX
--- Total Sales
-Total Sales = SUM('Sales Base'[Total])
-
--- Total Quantity Sold
-Total Quantity = SUM('Sales Base'[Quantity])
-
--- Average Sales per Invoice
-Average Sales per Invoice = 
-    DIVIDE([Total Sales], DISTINCTCOUNT('Sales Base'[Invoice ID]))
-
--- Rank by Sales
-Customer Rank = 
-    RANKX(
-        ALL('Sales Base'[Customer Name]),
-        [Total Sales],
-        ,
-        DESC
-    )
-```
-## 📊 2. Sales & Profitability Analysis
-This section explores the core profitability drivers of the business — identifying **which categories and products generate the most revenue and profit**, and whether the company relies on **high sales volume** or **high margins** for growth.
+This project performs a complete business analytics process using **Google BigQuery** and **Microsoft Power BI** on the public dataset **thelook_ecommerce**.  
+The goal is to uncover data-driven insights about **revenue trends, product profitability, and customer retention** to support strategic business decisions.
 
 ---
 
-### 🧱 Data Sources
-- **Sales_Base:** Main sales table containing key transaction data (`order_id`, `product_id`, `category`, `sale_price`, `cost`, `order_date`, `customer_id`).
-- **margin_vs_volume:** Aggregated data showing profitability and sales volume per category.
-- **top_20_products:** Filtered dataset containing the 20 products with the highest revenue or profit.
-- 📄 SQL File: [02_sales_profit_analysis.sql](sql/02_sales_profit_analysis.sql) 
+## 🎯 Business Objective
+
+To identify:
+- Which product categories and customers drive the highest **revenue and profit**.
+- How **customer loyalty and retention** evolve over time.
+- What **marketing and pricing opportunities** exist based on customer purchasing behavior.
 
 ---
 
-### ⚙️ DAX Measures Used
+## 📊 Dashboards Overview
 
-#### Core Metrics
-```DAX
-Total Revenue = SUM(Sales_Base[sale_price])
-
-Total Cost = SUM(Sales_Base[cost])
-
-Total Profit = [Total Revenue] - [Total Cost]
-
-Profit Margin % =
-DIVIDE([Total Profit], [Total Revenue], 0)
-```
-### 🌍 3. Customer & Market Insights
-* These queries focus on understanding user behavior, retention, and purchasing patterns through cohort analysis and retention metrics. 
-  
-📄 SQL File: [03_customer_dynamics_and_cohorts.sql](sql/03_customer_dynamics_and_cohorts.sql) 
+### 🧭 1. Sales Overview Dashboard
+![Sales Overview](key_metrics.png)
+**Key Metrics:**
+- Total Revenue: \$2.73M  
+- Average Order Value (AOV): \$78.15  
+- 25,307 New Customers  
+- Monthly Revenue Trend and Top Customers  
+- Revenue by Country & Gender filters
 
 ---
 
-## 🛠️ Tools Used
-* **SQL (BigQuery):** For data extraction, transformation, and exploration.
-* **Power BI:** For interactive visualization and insight presentation.
-* **GitHub:** For version control and project documentation.
+### 💰 2. Product Profitability Dashboard
+![Product Profitability](products_profitability.png)
+**Highlights:**
+- Total Profit: \$1.39M  
+- Profit Margin: 50.9%  
+- Top 20 products by revenue and margin  
+- Profit margin vs. volume correlation by category  
+- Strategic insight: *Sweaters and Jeans dominate sales volume, but Suits & Coats drive higher profitability.*
+
+---
+
+### 👥 3. Customer Retention & RFM Dashboard
+![Customer Insights](customer_insights.png)
+**Key Metrics:**
+- Average Recency: 372 days  
+- Average Frequency: 1.14  
+- Average Monetary Value: \$784  
+- Average RFM Score: 8.67  
+- Distribution by region, segment, and age group  
+- Retention rate trends (monthly and yearly)
+
+**Segmentation Logic (RFM):**
+- **Champions:** High frequency, high monetary value, recent purchases  
+- **Loyal Customers:** Frequent buyers with consistent monetary value  
+- **Potential Loyalists:** Newer customers with medium frequency  
+- **At Risk:** Long recency and low frequency  
+
+---
+
+## ⚙️ Technical Process
+
+1. **Data Exploration (BigQuery)**
+   - Cleaned and joined transactional tables (`orders`, `products`, `customers`, `inventory_items`)
+   - Created derived tables for sales, margin, and customer cohorts.
+
+2. **ETL Logic**
+   - Aggregated by `order_id`, `product_id`, and `customer_id`
+   - Created `sales_base` and `rfm_table` views for Power BI connection.
+
+3. **Power BI Modeling**
+   - Star schema with fact tables (`Sales`, `RFM`) and dimension tables (`Products`, `Customers`, `Calendar`)
+   - Relationships defined with single-direction filters to ensure measure accuracy.
+
+4. **DAX Measures**
+   ```DAX
+   Total Revenue = SUM('Sales Base'[sale_price])
+   Total Profit = [Total Revenue] - SUM('Sales Base'[cost])
+   Profit Margin % = DIVIDE([Total Profit], [Total Revenue], 0)
+
+   Average Recency (Days) = AVERAGE(RFM[Recency_days])
+   Average Monetary Value = AVERAGE(RFM[Monetary])
+   Average Purchase Frequency = AVERAGE(RFM[Frequency])
+   RFM Score = [Recency_Score] + [Frequency_Score] + [Monetary_Score]
+   ```
+
+## 🧱 Tools & Technologies
+
+| Tool | Purpose |
+| :--- | :--- |
+| **Google BigQuery** | Data extraction and transformation using SQL. |
+| **Power BI** | Data modeling, visualization, and storytelling. |
+| **DAX** | Custom **KPIs** and **RFM** segmentation. |
+| **GitHub** | Version control and documentation. |
+
+---
+
+## 🧠 Analytical Insights (Summary)
+
+* Over **50% profit margin** indicates operational efficiency.
+* **Top 10 customers** account for a significant share of revenue concentration.
+* Customer base shows **declining retention post-2023**, suggesting the need for re-engagement campaigns.
+* High-value segments (**Champions & Loyal Customers**) primarily located in **North America and Europe**.
+* 📄 A detailed business insights **PDF** is being prepared and will be added soon.
+
+---
+
+## 💡 Skills Demonstrated
+
+* Advanced SQL (**CTEs**, aggregations, window functions).
+* Power BI Data Modeling & **DAX**.
+* **KPI** Design and Dashboard Storytelling.
+* Business Analysis and Data Interpretation.
+* **Git**-based Project Documentation.
 
 ---
 
 ## 🚀 Project Value
 
-This analysis aims to simulate a real-world business analytics scenario within an e-commerce context by:
+This project simulates a real-world analytics case for an **international e-commerce company**.
 
-* **Identifying strategic products** (revenue vs. profitability).
-* **Understanding customer retention** and behavior.
-* **Discovering high-value customer profiles.**
+It delivers not only dashboards but **strategic, data-backed narratives** that guide decision-making in marketing, pricing, and customer management.
 
-Thus, the project delivers not only dashboards but also **data-supported business stories**.
-thelook-ecommerce-analysis/
-
-
+## 📁 Repository Structure
+```pgsql
+   ├─ docs/
+│   └─ exploration_notes.md
+├─ powerbi/
+│   ├─ DAX_Measures.md
+│   └─ Data_Model_Overview.md
+├─ sql/
+│   ├─ 01_business_overview_metrics.sql
+│   ├─ 02_sales_and_margin_drivers.sql
+│   ├─ 03_customer_dynamics_and_cohorts.sql
+│   ├─ 04_sales_base.sql
+│   └─ Exploration.sql
+├─ README.md
+```

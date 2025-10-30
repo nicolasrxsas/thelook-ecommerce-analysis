@@ -82,7 +82,7 @@ To identify:
    Average Purchase Frequency = AVERAGE(RFM[Frequency])
    RFM Score = [Recency_Score] + [Frequency_Score] + [Monetary_Score]
    ```
-
+[Click here](powerbi/DAX?Measures.md)  to see all the **most** relevant DAX measures used in the Dashboard. 
 ## 🧱 Tools & Technologies
 
 | Tool | Purpose |

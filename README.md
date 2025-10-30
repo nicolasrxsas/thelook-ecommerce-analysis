@@ -130,7 +130,9 @@ It delivers not only dashboards but **strategic, data-backed narratives** that g
 │   └─ exploration_notes.md
 ├─ powerbi/
 │   ├─ DAX_Measures.md
-│   └─ Data_Model_Overview.md
+│   ├─ Data_Model_Overview.md
+│   ├─ Data_model_capture.png
+│   ├─ thelook_ecommerce_analysis.pbix
 ├─ sql/
 │   ├─ 01_business_overview_metrics.sql
 │   ├─ 02_sales_and_margin_drivers.sql

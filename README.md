@@ -17,7 +17,7 @@ To identify:
 ## 📊 Dashboards Overview
 
 ### 🧭 1. Sales Overview Dashboard
-![Sales Overview](key_metrics.png)
+![Sales Overview](Image/key_metrics.png)
 **Key Metrics:**
 - Total Revenue: \$2.73M  
 - Average Order Value (AOV): \$78.15  
@@ -28,7 +28,7 @@ To identify:
 ---
 
 ### 💰 2. Product Profitability Dashboard
-![Product Profitability](products_profitability.png)
+![Product Profitability](Image/products_profitability.png)
 **Highlights:**
 - Total Profit: \$1.39M  
 - Profit Margin: 50.9%  
@@ -39,7 +39,7 @@ To identify:
 ---
 
 ### 👥 3. Customer Retention & RFM Dashboard
-![Customer Insights](customer_insights.png)
+![Customer Insights](Image/customer_insights.png)
 **Key Metrics:**
 - Average Recency: 372 days  
 - Average Frequency: 1.14  
@@ -69,7 +69,7 @@ To identify:
 3. **Power BI Modeling**
    - Star schema with fact tables (`Sales`, `RFM`) and dimension tables (`Products`, `Customers`, `Calendar`)
    - Relationships defined with single-direction filters to ensure measure accuracy.
-   - ![Click here to see the Data Model Image](Data_model_capture.png)
+   -![data model](powerbi/Data_model_capture.png)
 
 4. **DAX Measures**
    ```DAX

@@ -69,6 +69,7 @@ To identify:
 3. **Power BI Modeling**
    - Star schema with fact tables (`Sales`, `RFM`) and dimension tables (`Products`, `Customers`, `Calendar`)
    - Relationships defined with single-direction filters to ensure measure accuracy.
+   - ![Click here to see the Data Model Image](Data_model_capture.png)
 
 4. **DAX Measures**
    ```DAX

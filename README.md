@@ -130,7 +130,7 @@ It delivers not only dashboards but **strategic, data-backed narratives** that g
 │   ├─ key_metrics.png
 │   └─ products_profitability.png
 ├─ docs/
-│   ├─ Insights_Presentation
+│   ├─ Insights_Presentation.pdf
 │   └─ exploration_notes.md
 ├─ powerbi/
 │   ├─ DAX_Measures.md

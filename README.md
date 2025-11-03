@@ -3,6 +3,9 @@
 This project performs a complete business analytics process using **Google BigQuery** and **Microsoft Power BI** on the public dataset **thelook_ecommerce**.  
 The goal is to uncover data-driven insights about **revenue trends, product profitability, and customer retention** to support strategic business decisions.
 
+-This presentation details the relevant insights from the Dashboard, along with recommended actions for each one.
+![Insights Presentation](docs/Insights_Presentation.pdf)
+
 ---
 
 ## 🎯 Business Objective
@@ -125,14 +128,15 @@ It delivers not only dashboards but **strategic, data-backed narratives** that g
 ├─ Image/
 │   ├─ customer_insights.png
 │   ├─ key_metrics.png
-│   ├─ products_profitability.png
+│   └─ products_profitability.png
 ├─ docs/
+│   ├─ Insights_Presentation
 │   └─ exploration_notes.md
 ├─ powerbi/
 │   ├─ DAX_Measures.md
 │   ├─ Data_Model_Overview.md
 │   ├─ Data_model_capture.png
-│   ├─ thelook_ecommerce_analysis.pbix
+│   └─ thelook_ecommerce_analysis.pbix
 ├─ sql/
 │   ├─ 01_business_overview_metrics.sql
 │   ├─ 02_sales_and_margin_drivers.sql

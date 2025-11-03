@@ -4,7 +4,7 @@ This project performs a complete business analytics process using **Google BigQu
 The goal is to uncover data-driven insights about **revenue trends, product profitability, and customer retention** to support strategic business decisions.
 
 -This presentation details the relevant insights from the Dashboard, along with recommended actions for each one.
-![Insights Presentation](docs/Insights_Presentation.pdf)
+[Insights Presentation](docs/Insights_Presentation.pdf)
 
 ---
 

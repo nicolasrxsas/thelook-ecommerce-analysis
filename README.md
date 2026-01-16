@@ -1,4 +1,4 @@
-# 🛍️ Project 2 – E-commerce Analysis with BigQuery and Power BI
+# 🛍️ E-commerce Analysis with BigQuery and Power BI
 
 This project performs a complete business analytics process using **Google BigQuery** and **Microsoft Power BI** on the public dataset **thelook_ecommerce**.  
 The goal is to uncover data-driven insights about **revenue trends, product profitability, and customer retention** to support strategic business decisions.
